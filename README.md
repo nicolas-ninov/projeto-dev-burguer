@@ -6,6 +6,13 @@ O projeto foi desenvolvido para praticar **manipulação de arrays, renderizaç�
 
 ---
 
+## 🌐 Acesse o projeto
+
+🔗 **Demo online:**  
+https://nicolas-ninov.github.io/projeto-dev-burguer/
+
+---
+
 ## 📸 Preview
 
 ![Preview do projeto](assets/preview.gif)
@@ -78,7 +85,7 @@ devburger
 Clone o repositório:
 
 ```
-git clone https://github.com/seu-usuario/devburger.git
+git clone https://github.com/nicolas-ninov/projeto-dev-burguer.git
 ```
 
 Abra o arquivo `index.html` no navegador.
