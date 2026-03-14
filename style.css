@@ -119,13 +119,17 @@ p {
 @media (max-width: 480px) {
     .container-buttons {
         display: grid;
-        grid-template-columns: repeat(2, 110px);
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 10px 0;
         gap: 15px;
     }
 
+    button {
+        width:100%;
+    }
+
     ul {
-        grid-template-columns: repeat(2, minmax(160px, 1fr));
-        padding: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 16px;
     }
 }
