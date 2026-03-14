@@ -43,19 +43,20 @@ button:active {
 ul {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, minmax(220px, 260px));
     gap: 20px;
     justify-content: center;
 }
 
 li {
+    display: flex;
+    flex-direction: column;
     border: solid 2px #8133ff;
     border-radius: 5px;
     padding: 10px;
     background-color: #111;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    min-height: 260px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -75,7 +76,7 @@ li:active {
 
 img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.25s ease;
@@ -92,9 +93,14 @@ p {
 }
 
 .total-card {
-    text-align: center;
-    padding: 20px;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
     border: 2px solid #8133ff;
+    margin: 0 auto;
 }
 
 .empty-state {
@@ -114,6 +120,7 @@ p {
         grid-template-columns: repeat(2, 200px);
     }
 
+
 }
 
 @media (max-width: 480px) {
@@ -130,6 +137,7 @@ p {
 
     ul {
         grid-template-columns: repeat(2, 1fr);
-        padding: 10px 16px;
+        padding: 10px;
     }
+
 }
