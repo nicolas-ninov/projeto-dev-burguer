@@ -87,9 +87,20 @@ p {
     margin-top: 5px;
 }
 
+.item-price-original {
+    text-decoration: line-through;
+    color: #af0000;
+}
+
 .item-price {
     font-weight: bold;
     color: #79cb15;
+}
+
+.item-description {
+    flex-grow: 1;
+    opacity: 0.85;
+    font-size: 16px;
 }
 
 .total-card {
@@ -136,7 +147,7 @@ p {
     }
 
     ul {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         padding: 10px;
     }
 

@@ -6,7 +6,7 @@ const display = document.querySelector("#button-foreach");
 const discount = document.querySelector("#button-map");
 const totalValue = document.querySelector("#button-reduce");
 const filterVegans = document.querySelector("#button-filter");
-const list = document.querySelector("ul")
+const list = document.querySelector("#menu-list")
 
 
 // FUNÇÕES DE RENDERIZAÇÃO
@@ -29,7 +29,14 @@ function renderProducts(products) {
         <li>
             <img src="${product.src}" alt="${product.name}">
             <p>${product.name}</p>
-            <p class="item-price">${product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
+            <p class="item-description">${product.description}</p>
+            ${product.originalPrice
+                ? ` <p>
+                        <span class="item-price-original">${product.originalPrice.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+                        <span class="item-price">${product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>     
+                    </p>`
+                : `<p class="item-price">${product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>`
+            }
         </li>
         `
     });
@@ -49,6 +56,7 @@ function discountMap() {
         const original = menuOptions.find(item => item.name === product.name);
         return {
             ...product,
+            originalPrice: original.price,
             price: original.price * 0.9
         };
     });
