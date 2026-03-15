@@ -1,18 +1,18 @@
 // ESTADO DA APLICAÇÃO
-let currentProducts = menuOptions; 
+let currentProducts = menuOptions;
 
 // ELEMENTOS DO DOM
-const display = document.querySelector("#button-foreach");
-const discount = document.querySelector("#button-map");
-const totalValue = document.querySelector("#button-reduce");
-const filterVegans = document.querySelector("#button-filter");
+const display = document.querySelector("#show-all");
+const discount = document.querySelector("#discount");
+const totalValue = document.querySelector("#total-value");
+const filterVegans = document.querySelector("#filter-vegans");
 const list = document.querySelector("#menu-list")
 
 
 // FUNÇÕES DE RENDERIZAÇÃO
 function renderProducts(products) {
     currentProducts = products;
-    
+
     if (products.length === 0) {
         list.innerHTML = `
             <li class="empty-state">
@@ -28,7 +28,7 @@ function renderProducts(products) {
         myLi += `
         <li>
             <img src="${product.src}" alt="${product.name}">
-            <p>${product.name}</p>
+            <p id="title">${product.name}</p>
             <p class="item-description">${product.description}</p>
             ${product.originalPrice
                 ? ` <p>
@@ -71,7 +71,7 @@ function filterVegan() {
 }
 
 function sumAll() {
-    const total = currentProducts.reduce((acc, item) => acc + item.price, 0)
+    const total = currentProducts.reduce((acc, curr) => acc + curr.price, 0)
 
     list.innerHTML = `
         <li class="total-card">
@@ -90,4 +90,4 @@ filterVegans.addEventListener("click", filterVegan);
 
 // RENDERIZAÇÃO INICIAL
 
-renderProducts(menuOptions);
+() => renderProducts(menuOptions);
